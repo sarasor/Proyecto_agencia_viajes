@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Agencia de viajes</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <!-- Modals -->
+    <div class="modal fade" id="exampleModalReservar" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h1 class="modal-title fs-5 ms-1" id="exampleModalLabel"><i class="bi bi-calendar-check"></i>
+                        Reserva
+                        rápida</h1>
+                    <button type="button" class="btn-close btn-close-white fw-bold" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-2 ms-1 me-1 mt-1">
+                        <div class="col-12 mb-1">
+                            <label for="inputName" class="form-label">Nombre completo *</label>
+                            <input type="text" class="form-control" id="inputName" required>
+                        </div>
+                        <div class="col-12 mb-1">
+                            <label for="inputEmail" class="form-label">Email *</label>
+                            <input type="email" class="form-control" id="inputEmail" required>
+                        </div>
+                        <div class="col-12 mb-1">
+                            <label for="inputDestino" class="form-label">Destino *</label>
+                            <select class="form-select" aria-label="Default select example" id="inputDestino" required>
+                                <option selected>Selecciona un destino</option>
+                                <option value="1">Barcelona, España</option>
+                                <option value="2">Cancún, México</option>
+                                <option value="3">Edimburgo, Escocia</option>
+                                <option value="4">Florencia, Italia</option>
+                                <option value="5">Mykonos, Grecia</option>
+                                <option value="6">Nha Trang, Vietnam</option>
+                                <option value="7">Nueva York, USA</option>
+                                <option value="8">París, Francia</option>
+                                <option value="9">Tenerife, España</option>
+                                <option value="10">Tokio, Japón</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="fecha" class="form-label">Fecha de viaje *</label>
+                            <input type="date" class="form-control" id="fecha" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPersonas" class="form-label">Personas *</label>
+                            <input type="number" class="form-control" id="inputPersonas" required min="1">
+                        </div>
+                        <div class="col-12 mb-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck" required>
+                                    Acepto los términos y condiciones
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-dark">Enviar reserva</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modal-lg" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h1 class="modal-title fs-5 " id="exampleModalToggleLabel">Detalles del destino</h1>
+                    <button type="button" class="btn-close btn-close-white fw-bold" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner imgModal">
+                            <div class="carousel-item active">
+                                <img src="img/tokio.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/tokio2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <p class="fw-bold mt-4">Incluye:</p>
+                    <ul>
+                        <li>Vuelo de ida y vuelta</li>
+                        <li>Hotel 4 estrellas (7 días)</li>
+                        <li>Traslados aeropuerto-hotel</li>
+                        <li>Pases de transporte para el tren bala</li>
+                        <li>Excursión al Monte Fuji</li>
+                        <li>Guía turístico en español</li>
+                        <li>Seguro de viaje</li>
+                    </ul>
+                    <div class="alert alert-success" role="alert">
+                        <i class="bi bi-info-circle-fill fw-bold"> Promoción especial:</i> Realiza tu viaje antes del 12 de abril y obtén un sitio para el Sakura Fest 
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-dark text-white" data-bs-target="#exampleModalReservar"
+                        data-bs-toggle="modal">Reservar ahora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+        <!-- place navbar here -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+            <div class="container contenedor_nav">
+                <a class="navbar-brand" href="index.html"><i class="bi bi-airplane-fill"></i> Destinos del mundo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarText">
+                    <ul class="navbar-nav mb-lg-0 ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html" id="inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="destinos.html">Destinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="" data-bs-toggle="modal"
+                                data-bs-target="#exampleModalReservar"><button type="button" class="btn btn-light"><i
+                                        class="bi bi-calendar-check"></i> Reservar
+                                    ahora</button></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="img/viajar.png" class="d-block w-100 " alt="...">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
+                        <h1 class="fw-bold">Descubre el mundo</h1>
+                        <p>Aventuras inolvidables te esperan.</p>
+                        <a href="destinos.html"><button type="button" class="btn btn-light btn-lg mb-2 ">Ver
+                                destinos</button></a>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="img/playas.png" class="d-block w-100 " alt="...">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
+                        <h1 class="fw-bold">Playas paradisíacas</h1>
+                        <p>Relájate en los mejores detinos.</p>
+                        <a href="destinos.html"><button type="button"
+                                class="btn btn-warning btn-lg mb-2">Explorar</button></a>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/skyline.jpg" class="d-block w-100 " alt="...">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3">
+                        <h1 class="fw-bold">Ciudades increíbles</h1>
+                        <p>Cultura, historia y modernidad.</p>
+                        <a href="destinos.html"><button type="button"
+                                class="btn btn-light btn-lg mb-2">Descubrir</button></a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon fw-bold" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon fw-bold" aria-hidden="true"></span>
+                <span class="visually-hidden ">Next</span>
+            </button>
+        </div>
+        <section class="sitios bg-success bg-opacity-10 rounded-5 mt-0">
+            <br>
+            <div class="contenedor mt-5">
+                <div class="text-center">
+                    <h1 class="fw-bold">Destinos destacados</h1>
+                    <p>Los lugares más populares para este verano</p>
+                </div>
+                <div class="row g-2 ms-5 me-5 mt-3">
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card cd shadow transition ">
+                            <img src="img/tokio.jpg" class="card-img-top" alt="...">
+                            <span class="badge position-absolute bg-primary p-2 mt-4 me-4 end-0">Popular</span>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="card-title fw-bold">Tokio, Japón</h5>
+                                    <span class="badge bg-secondary p-2">Ciudad</span>
+                                </div>
+                                <p class="card-text">Capital de Japón y metrópolis más poblada del mundo, Tokio
+                                    ofrece tradición e innovación, así como muchas opciones para comer y explorar.</p>
+                                <div class="d-flex text-warning">
+                                    <i class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star-half mt-1"></i>
+                                    <p class="text-dark ms- mt-1">(4,5)</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <h4 class="text-primary ms-2">1.850€</h4>
+                                    <a class="nav-link" href="" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalToggle"><button type="button"
+                                            class="btn btn-dark">Ver más</button></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card cd shadow transition ">
+                            <img src="img/vietnam.jpg" class="card-img-top" alt="...">
+                            <span class="badge position-absolute bg-success p-2 mt-4 me-4 end-0">Nuevo</span>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="card-title fw-bold">Nha Trang, Vietnam</h5>
+                                    <span class="badge bg-primary p-2">Aventura</span>
+                                </div>
+                                <p class="card-text">Esta joya costera de Vietnam combina playas de arena blanca, aguas
+                                    turquesas, cultura vibrante y una gastronomía que despierta los sentidos.</p>
+                                <div class="d-flex text-warning ">
+                                    <i class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star mt-1"></i>
+                                    <p class="text-dark ms-1 mt-1">(4,0) </p>
+                                    <span class="badge bg-danger p-2 ms-auto align-self-center">Exclusivo</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <h4 class="text-primary ms-2">1.200€</h4>
+                                    <a href="#" class="btn btn-dark">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card cd shadow transition ">
+                            <img src="img/paris.jpg" class="card-img-top" alt="...">
+                            <span class="badge position-absolute bg-danger p-2 mt-4 me-4 end-0">30% OFF</span>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="card-title fw-bold">París, Francia</h5>
+                                    <span class="badge bg-secondary p-2">Ciudad</span>
+                                </div>
+                                <p class="card-text">Famosa por su gastronomía, arte y museos, así como por el río Sena
+                                    que la atraviesa, París es sin duda uno de los lugares más bellos del mundo.</p>
+                                <div class="d-flex text-warning ">
+                                    <i class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star-half mt-1"></i>
+                                    <p class="text-dark ms-1 mt-1">(4,5) </p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                    <div class="col">
+                                        <p class="mb-0 ms-2 text-decoration-line-through">450€</p>
+                                        <h4 class="text-primary ms-2">315€</h4>
+                                    </div>
+                                    <a href="#" class="btn btn-dark">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card cd shadow transition ">
+                            <img src="img/cancun.jpg" class="card-img-top" alt="...">
+                            <span class="badge position-absolute bg-danger p-2 mt-4 me-4 end-0">30% OFF</span>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="card-title fw-bold">Cancún, México</h5>
+                                    <span class="badge bg-warning p-2">Playa</span>
+                                </div>
+                                <p class="card-text">Uno de los destinos más populares y cautivadores, famoso por sus
+                                    playas paradisíacas, sus antiguas ruinas mayas y su vibrante
+                                    vida nocturna.</p>
+                                <div class="d-flex text-warning ">
+                                    <i class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star-fill mt-1"></i>
+                                    <p class="text-dark ms-1 mt-1">(5,0) </p>
+                                    <span class="badge bg-primary p-2 ms-auto align-self-center">Popular</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                    <div class="col">
+                                        <p class="mb-0 ms-2 text-decoration-line-through">1.100€</p>
+                                        <h4 class="text-primary ms-2">770€</h4>
+                                    </div>
+                                    <a href="#" class="btn btn-dark">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card cd shadow transition ">
+                            <img src="img/mykonos.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="card-title fw-bold">Mykonos, Grecia</h5>
+                                    <span class="badge bg-warning p-2">Playa</span>
+                                </div>
+                                <p class="card-text">Mykonos es ruido y también silencio. Este pequeño lugar ofrece
+                                    varios lugares interesantes que visitar en el casco
+                                    antiguo, además de sus playas y fiesta.</p>
+                                <div class="d-flex text-warning ">
+                                    <i class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star-half mt-1"></i>
+                                    <p class="text-dark ms-1 mt-1">(4,5) </p>
+                                    <span class="badge bg-success p-2 ms-auto align-self-center">Recomendado</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <h4 class="text-primary ms-2">600€</h4>
+                                    <a href="#" class="btn btn-dark">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card cd shadow transition ">
+                            <img src="img/newyork.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="card-title fw-bold">Nueva York, USA</h5>
+                                    <span class="badge bg-secondary p-2">Ciudad</span>
+                                </div>
+                                <p class="card-text">La capital del mundo se levanta con un espíritu
+                                    diferente tras cada amanecer. Descubre un lugar conocido y desconocido a la vez.</p>
+                                <div class="d-flex text-warning ">
+                                    <i class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star-fill mt-1"></i><i class="bi bi-star-fill mt-1"></i><i
+                                        class="bi bi-star-half mt-1"></i>
+                                    <p class="text-dark ms-1 mt-1">(4,5) </p>
+
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <h4 class="text-primary ms-2">2.000€</h4>
+                                    <a href="#" class="btn btn-dark">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="destinos.html"><button type="button" class="btn btn-outline-dark mb-5 fw-bold">Ver todos los
+                        destinos
+                        <i class="bi bi-arrow-right ms-2"></i></button></a>
+            </div>
+        </section>
+        <section class="opiniones">
+            <div class="contenedor ms-5 me-5 mt-5">
+                <div class="text-center">
+                    <h1 class="fw-bold">Lo que dicen nuestros clientes</h1>
+                    <p>Experiencias reales de viajeros felices</p>
+                </div>
+                <div class="row d-md-flex justify-content-md-center">
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center ">
+                                    <img src="img/mujer1.jpg" alt="" class="rounded-circle mb-3">
+                                    <div class="col ms-4">
+                                        <h6 class="mb-0">María Maldonado</h6>
+                                        <p class="text-secondary">Viajó a Cancún</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex text-warning mb-1">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="mb-0">"Una experiencia inolvidable. La organización fue perfecta y el servicio
+                                    excelente. ¡Volveré a viajar con ellos!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center ">
+                                    <img src="img/hombre1.jpg" alt="" class="rounded-circle mb-3">
+                                    <div class="col ms-4">
+                                        <h6 class="mb-0">Pedro Pérez</h6>
+                                        <p class="text-secondary">Viajó a Tokio</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex text-warning mb-1">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-half"></i>
+                                </div>
+                                <p class="mb-0">"Tokio superó todas mis expectativas. Gracias a la agencia por hacer
+                                    realidad mi sueño. Todo estuvo perfecto."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 p-3">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center ">
+                                    <img src="img/hombre2.jpg" alt="" class="rounded-circle mb-3">
+                                    <div class="col ms-4">
+                                        <h6 class="mb-0">Carlos Sánchez</h6>
+                                        <p class="text-secondary">Viajó a Mykonos</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex text-warning mb-1">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="mb-0">"El paraíso en la tierra. La atención al detalle y al servicio
+                                    personalizado hicieron la diferencia. ¡Increíble!."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-secondary text-white mt-5 mb-0">
+        <!-- place footer here -->
+        <div class="row ms-4 me-4">
+            <div class="col-12 col-md-6 col-lg-4 p-4 mt-4 ">
+                <h5 class="fw-bold mb-4"><i class="bi bi-airplane-fill"></i> Destinos del mundo</h5>
+                <p>Tu agencia de confianza para vivir experiencias inolvidables alrededor del mundo.</p>
+                <div class="d-flex mt-4">
+                    <a href="https://www.facebook.com/" class="text-white pe-3"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/" class="text-white pe-3"><i class="bi bi-instagram"></i></a>
+                    <a href="https://x.com/" class="text-white pe-3"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.youtube.com/" class="text-white pe-3"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-4 mt-4">
+                <h5 class="fw-bold mb-4">Enlaces rápidos</h5>
+                <a href="index.html" class="text-decoration-none">
+                    <p class="text-white">Inicio</p>
+                </a>
+                <a href="destinos.html" class="text-decoration-none">
+                    <p class="text-white">Destinos</p>
+                </a>
+                <a href="contacto.html" class="text-decoration-none">
+                    <p class="text-white">Contacto</p>
+                </a>
+                <a href="contacto.html" class="text-decoration-none">
+                    <p class="text-white">Sobre nosotros</p>
+                </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-4 mt-4">
+                <h5 class="fw-bold mb-4">Contacto</h5>
+                <p class="text-white"><i class="bi bi-geo-alt-fill me-2"></i>Calle Nonombre 1234, Madrid</p>
+                <p class="text-white"><i class="bi bi-telephone-fill me-2"></i>+34 900 123 456</p>
+                <p class="text-white"><i class="bi bi-envelope-fill me-2"></i>informacion@miagenciaviajes.com</p>
+                <p class="text-white"><i class="bi bi-clock-fill me-2"></i>Lun-Vie 9:00-14:00 y 16:00-19:00</p>
+            </div>
+        </div>
+        <hr class="ms-5 me-5">
+        <br>
+        <p class="text-center">© 2026 Destinos del mundo. Todos los derechos reservados</p>
+        <br>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

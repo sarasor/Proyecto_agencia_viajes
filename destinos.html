@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Destinos. Agencia de viajes</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <!-- Modals -->
+    <div class="modal fade" id="exampleModalReservar" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h1 class="modal-title fs-5 ms-1" id="exampleModalLabel"><i class="bi bi-calendar-check"></i>
+                        Reserva
+                        rápida</h1>
+                    <button type="button" class="btn-close btn-close-white fw-bold" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-2 ms-1 me-1 mt-1">
+                        <div class="col-12 mb-1">
+                            <label for="inputName" class="form-label">Nombre completo *</label>
+                            <input type="text" class="form-control" id="inputName" required>
+                        </div>
+                        <div class="col-12 mb-1">
+                            <label for="inputEmail" class="form-label">Email *</label>
+                            <input type="email" class="form-control" id="inputEmail" required>
+                        </div>
+                        <div class="col-12 mb-1">
+                            <label for="inputDestino" class="form-label">Destino *</label>
+                            <select class="form-select" aria-label="Default select example" id="inputDestino" required>
+                                <option selected>Selecciona un destino</option>
+                                <option value="1">Barcelona, España</option>
+                                <option value="2">Cancún, México</option>
+                                <option value="3">Edimburgo, Escocia</option>
+                                <option value="4">Florencia, Italia</option>
+                                <option value="5">Mykonos, Grecia</option>
+                                <option value="6">Nha Trang, Vietnam</option>
+                                <option value="7">Nueva York, USA</option>
+                                <option value="8">París, Francia</option>
+                                <option value="9">Tenerife, España</option>
+                                <option value="10">Tokio, Japón</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="fecha" class="form-label">Fecha de viaje *</label>
+                            <input type="date" class="form-control" id="fecha" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPersonas" class="form-label">Personas *</label>
+                            <input type="number" class="form-control" id="inputPersonas" required min="1">
+                        </div>
+                        <div class="col-12 mb-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck" required>
+                                    Acepto los términos y condiciones
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-dark">Enviar reserva</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <!-- place navbar here -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+            <div class="container contenedor_nav">
+                <a class="navbar-brand" href="index.html"><i class="bi bi-airplane-fill"></i> Destinos del mundo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarText">
+                    <ul class="navbar-nav mb-lg-0 ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" id="inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="destinos.html">Destinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="" data-bs-toggle="modal"
+                                data-bs-target="#exampleModalReservar"><button type="button" class="btn btn-light"><i
+                                        class="bi bi-calendar-check"></i> Reservar
+                                    ahora</button></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="bg-dark-subtle p-5 text-center">
+            <br><br><br><br>
+            <h1 class="mb-3 fw-bold">Nuestros destinos</h1>
+            <h5>Encuentra tu próximo destino</h5>
+            <br>
+        </section>
+        <section class="busqueda bg-success bg-opacity-10 rounded-4 mt-0">
+            <div class="row ms-5 me-5 d-flex align-items-center">
+                <div class="col-12 col-md-6 col-lg-3 p-4 mt-3">
+                    <label for="inputState" class="form-label">Tipo de destino</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Todos</option>
+                        <option>Ciudad</option>
+                        <option>Playa</option>
+                        <option>Montaña</option>
+                        <option>Aventura</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 p-4 mt-3">
+                    <label for="inputState" class="form-label">Continente</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Todos</option>
+                        <option>Europa</option>
+                        <option>Asia</option>
+                        <option>América</option>
+                        <option>África</option>
+                        <option>Oceanía</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 p-4 mt-3">
+                    <label for="inputState" class="form-label">Precio máximo</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Sin límite</option>
+                        <option>Hasta 500€</option>
+                        <option>Hasta 1000€</option>
+                        <option>Hasta 1500€</option>
+                        <option>Hasta 2000€</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 p-4 mt-5">
+                    <button type="button" class="btn btn-dark btn-lg w-100"><i
+                            class="bi bi-search me-2"></i>Buscar</button>
+                </div>
+            </div>
+            <br>
+        </section>
+        <section class="tablaDestinos ms-5 me-5 mt-5">
+            <h2 class="ms-3 fw-bold">Comparativa de paquetes</h2>
+            <div class="table-responsive mt-4 ms-3 me-3">
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Destino</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Alojamiento</th>
+                            <th scope="col">Vuelo</th>
+                            <th scope="col">Comidas</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Barcelona, España</th>
+                            <td>4 días</td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Hotel 3 <i
+                                    class="bi bi-star-fill estrella"></i></td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Incluido</td>
+                            <td>Alojamiento y desayuno</td>
+                            <td class="text-primary fw-bold">280€</td>
+                            <td><a href="#" class="btn btn-secondary btn-sm">Reservar</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cancún, México <span class="badge bg-danger p-2 ms-auto ">Oferta</span></th>
+                            <td>9 días</td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Hotel 5 <i
+                                    class="bi bi-star-fill estrella"></i></td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Incluido</td>
+                            <td>Todo incluido</td>
+                            <td class="text-primary fw-bold">770€</td>
+                            <td><a href="#" class="btn btn-secondary btn-sm">Reservar</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Edimburgo, Escocia</th>
+                            <td>4 días</td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Hotel 4 <i
+                                    class="bi bi-star-fill estrella"></i></td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Incluido</td>
+                            <td>Alojamiento y desayuno</td>
+                            <td class="text-primary fw-bold">300€</td>
+                            <td><a href="#" class="btn btn-secondary btn-sm">Reservar</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Florencia, Italia</th>
+                            <td>7 días</td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Hotel 3 <i
+                                    class="bi bi-star-fill estrella"></i></td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Incluido</td>
+                            <td>Alojamiento y desayuno</td>
+                            <td class="text-primary fw-bold">480€</td>
+                            <td><a href="#" class="btn btn-secondary btn-sm">Reservar</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mykonos, Grecia <span
+                                    class="badge bg-success p-2 ms-auto ">Recomendado</span></th>
+                            <td>9 días</td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Hotel 3 <i
+                                    class="bi bi-star-fill estrella"></i></td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Incluido</td>
+                            <td>Solo alojamiento</td>
+                            <td class="text-primary fw-bold">600€</td>
+                            <td><a href="#" class="btn btn-secondary btn-sm">Reservar</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nha Trang, Vietnam <span class="badge bg-warning p-2 ms-auto ">Nuevo</span>
+                            </th>
+                            <td>9 días</td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Villa 4 <i
+                                    class="bi bi-star-fill estrella"></i></td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Incluido</td>
+                            <td>Todo incluido</td>
+                            <td class="text-primary fw-bold">1.200€</td>
+                            <td><a href="#" class="btn btn-secondary btn-sm">Reservar</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nueva York, USA</th>
+                            <td>9 días</td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Hotel 4 <i
+                                    class="bi bi-star-fill estrella"></i></td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Incluido</td>
+                            <td>Alojamiento y desayuno</td>
+                            <td class="text-primary fw-bold">2.000€</td>
+                            <td><a href="#" class="btn btn-secondary btn-sm">Reservar</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">París, Francia <span class="badge bg-danger p-2 ms-auto ">Oferta</span></th>
+                            <td>9 días</td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Hotel 3 <i
+                                    class="bi bi-star-fill estrella"></i></td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Incluido</td>
+                            <td>Alojamiento y desayuno</td>
+                            <td class="text-primary fw-bold">315€</td>
+                            <td><a href="#" class="btn btn-secondary btn-sm">Reservar</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tenerife, España</th>
+                            <td>8 días</td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Hotel 4 <i
+                                    class="bi bi-star-fill estrella"></i></td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Incluido</td>
+                            <td>Media pensión</td>
+                            <td class="text-primary fw-bold">390€</td>
+                            <td><a href="#" class="btn btn-secondary btn-sm">Reservar</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tokio, Japón <span class="badge bg-primary p-2 ms-auto ">Popular</span></th>
+                            <td>7 días</td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Hotel 4 <i
+                                    class="bi bi-star-fill estrella"></i></td>
+                            <td><i class="bi bi-check-circle-fill incluido "></i> Incluido</td>
+                            <td>Solo alojamiento</td>
+                            <td class="text-primary fw-bold">1.850€</td>
+                            <td><a href="#" class="btn btn-secondary btn-sm">Reservar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-secondary text-white mt-5 mb-0">
+        <!-- place footer here -->
+        <div class="row ms-4 me-4 ">
+            <div class="col-12 col-md-6 col-lg-4 p-4 mt-4">
+                <h5 class="fw-bold mb-4"><i class="bi bi-airplane-fill"></i> Destinos del mundo</h5>
+                <p>Tu agencia de confianza para vivir experiencias inolvidables alrededor del mundo.</p>
+                <div class="d-flex mt-4">
+                    <a href="https://www.facebook.com/" class="text-white pe-3"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/" class="text-white pe-3"><i class="bi bi-instagram"></i></a>
+                    <a href="https://x.com/" class="text-white pe-3"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.youtube.com/" class="text-white pe-3"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-4 mt-4">
+                <h5 class="fw-bold mb-4">Enlaces rápidos</h5>
+                <a href="index.html" class="text-decoration-none">
+                    <p class="text-white">Inicio</p>
+                </a>
+                <a href="destinos.html" class="text-decoration-none">
+                    <p class="text-white">Destinos</p>
+                </a>
+                <a href="contacto.html" class="text-decoration-none">
+                    <p class="text-white">Contacto</p>
+                </a>
+                <a href="contacto.html" class="text-decoration-none">
+                    <p class="text-white">Sobre nosotros</p>
+                </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-4 mt-4">
+                <h5 class="fw-bold mb-4">Contacto</h5>
+                <p class="text-white"><i class="bi bi-geo-alt-fill me-2"></i>Calle Nonombre 1234, Madrid</p>
+                <p class="text-white"><i class="bi bi-telephone-fill me-2"></i>+34 900 123 456</p>
+                <p class="text-white"><i class="bi bi-envelope-fill me-2"></i>informacion@miagenciaviajes.com</p>
+                <p class="text-white"><i class="bi bi-clock-fill me-2"></i>Lun-Vie 9:00-14:00 y 16:00-19:00</p>
+            </div>
+        </div>
+        <hr class="ms-5 me-5">
+        <br>
+        <p class="text-center">© 2026 Destinos del mundo. Todos los derechos reservados</p>
+        <br>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

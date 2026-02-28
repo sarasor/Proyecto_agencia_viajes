@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Contacto. Agencia de viajes</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <!-- Modals -->
+    <div class="modal fade" id="exampleModalReservar" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h1 class="modal-title fs-5 ms-1" id="exampleModalLabel"><i class="bi bi-calendar-check"></i>
+                        Reserva
+                        rápida</h1>
+                    <button type="button" class="btn-close btn-close-white fw-bold" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-2 ms-1 me-1 mt-1">
+                        <div class="col-12 mb-1">
+                            <label for="inputName" class="form-label">Nombre completo *</label>
+                            <input type="text" class="form-control" id="inputName" required>
+                        </div>
+                        <div class="col-12 mb-1">
+                            <label for="inputEmail" class="form-label">Email *</label>
+                            <input type="email" class="form-control" id="inputEmail" required>
+                        </div>
+                        <div class="col-12 mb-1">
+                            <label for="inputDestino" class="form-label">Destino *</label>
+                            <select class="form-select" aria-label="Default select example" id="inputDestino" required>
+                                <option selected>Selecciona un destino</option>
+                                <option value="1">Barcelona, España</option>
+                                <option value="2">Cancún, México</option>
+                                <option value="3">Edimburgo, Escocia</option>
+                                <option value="4">Florencia, Italia</option>
+                                <option value="5">Mykonos, Grecia</option>
+                                <option value="6">Nha Trang, Vietnam</option>
+                                <option value="7">Nueva York, USA</option>
+                                <option value="8">París, Francia</option>
+                                <option value="9">Tenerife, España</option>
+                                <option value="10">Tokio, Japón</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="fecha" class="form-label">Fecha de viaje *</label>
+                            <input type="date" class="form-control" id="fecha" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPersonas" class="form-label">Personas *</label>
+                            <input type="number" class="form-control" id="inputPersonas" required min="1">
+                        </div>
+                        <div class="col-12 mb-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck" required>
+                                    Acepto los términos y condiciones
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-dark">Enviar reserva</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <!-- place navbar here -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+            <div class="container contenedor_nav">
+                <a class="navbar-brand" href="index.html"><i class="bi bi-airplane-fill"></i> Destinos del mundo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarText">
+                    <ul class="navbar-nav mb-lg-0 ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" id="inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="destinos.html">Destinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="" data-bs-toggle="modal"
+                                data-bs-target="#exampleModalReservar"><button type="button" class="btn btn-light"><i
+                                        class="bi bi-calendar-check"></i> Reservar
+                                    ahora</button></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="bg-dark-subtle p-5 text-center">
+            <br><br><br><br>
+            <h1 class="mb-3 fw-bold">Contacta con nosotros</h1>
+            <h5>Estamos aquí para ayudarte a planear tu viaje perfecto</h5>
+            <br>
+        </section>
+        <section>
+            <di class="row ms-5 me-5">
+                <div class="col-12 col-md-12 col-lg-6 p-4 mt-5">
+                    <h2 class="mb-4 fw-bold">Envíanos un mesaje</h2>
+                    <form class="row g-3">
+                        <div class="col-md-6 mb-1">
+                            <label for="inputName" class="form-label">Nombre completo *</label>
+                            <input type="text" class="form-control" id="inputName" required>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label for="inputEmail" class="form-label">Email *</label>
+                            <input type="email" class="form-control" id="inputEmail" required>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label for="inputTelefono" class="form-label">Teléfono </label>
+                            <input type="tel" class="form-control" id="inputTelefono" placeholder="+34 600 000 000">
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label for="inputDestino" class="form-label">Destino de interés*</label>
+                            <select class="form-select" aria-label="Default select example" id="inputDestino" required>
+                                <option selected>Selecciona un destino</option>
+                                <option value="1">Barcelona, España</option>
+                                <option value="2">Cancún, México</option>
+                                <option value="3">Edimburgo, Escocia</option>
+                                <option value="4">Florencia, Italia</option>
+                                <option value="5">Mykonos, Grecia</option>
+                                <option value="6">Nha Trang, Vietnam</option>
+                                <option value="7">Nueva York, USA</option>
+                                <option value="8">París, Francia</option>
+                                <option value="9">Tenerife, España</option>
+                                <option value="10">Tokio, Japón</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label for="inputPersonas" class="form-label">Personas *</label>
+                            <input type="number" class="form-control" id="inputPersonas" required min="1">
+                        </div>
+                        <div class="col-md-6 mb-1">
+                            <label for="fecha" class="form-label">Fecha de viaje *</label>
+                            <input type="date" class="form-control" id="fecha" required>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <label for="exampleFormControlTextarea1" class="form-label">Mensaje o consulta *</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" requiered
+                                placeholder="Cuénanos sobre tu viaje ideal..."></textarea>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Deseo recibir ofertas y novedades por email
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck" required>
+                                    Acepto la <a href="">política de privacidad</a> y los <a href="">términos y
+                                        condiciones</a> *
+                                </label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-dark btn-lg w-100"><i class="bi bi-send"></i> Enviar
+                            mensaje</button>
+                    </form>
+                </div>
+                <div class="col-12 col-md-12 col-lg-6 p-4 mt-5">
+                    <h2 class="mb-4 ms-3 fw-bold">Información de contacto</h2>
+                    <div class="card ms-3 me-5 mb-4">
+                        <div class="card-body">
+                            <div class="d-flex mt-1">
+                                <figure class="figure bg-dark rounded p-3">
+                                    <i class="bi bi-geo-alt-fill text-white info"></i>
+                                </figure>
+                                <div class="row 3 ms-2">
+                                    <p class="fw-bold mb-0">Dirección</p>
+                                    <p class="mb-0">Calle Nonombre 1234</p>
+                                    <p>28000 Madrid, España</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-1">
+                                <figure class="figure bg-dark rounded p-3">
+                                    <i class="bi bi-telephone-fill text-white info"></i>
+                                </figure>
+                                <div class="row 3 ms-2">
+                                    <p class="fw-bold mb-0">Teléfono</p>
+                                    <p class="mb-0">+34 900 123 456</p>
+                                    <p>+34 900 123 457</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-1">
+                                <figure class="figure bg-dark rounded p-3">
+                                    <i class="bi bi-envelope-fill text-white info"></i>
+                                </figure>
+                                <div class="row 3 ms-2">
+                                    <p class="fw-bold mb-0">Email</p>
+                                    <p class="mb-0">informacion@miagenciaviajes.com</p>
+                                    <p>reservar@destinosdelmundo.com</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-1">
+                                <figure class="figure bg-dark rounded p-3">
+                                    <i class="bi bi-clock-fill text-white info"></i>
+                                </figure>
+                                <div class="row 3 ms-2">
+                                    <p class="fw-bold mb-0">Horario</p>
+                                    <p class="mb-0">Lun-Vie 9:00-14:00 y 16:00-19:00</p>
+                                    <p>Sábados y Domingos cerrados</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card ms-3 me-5 mapa ">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d17184.371541675824!2d-3.687665897748887!3d40.41336069320498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1771932829222!5m2!1ses!2ses"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="card-body mb-2">
+                            <p class="fw-bold text-center mt-3">Síguenos en redes sociales</p>
+                            <div class="d-flex mt-3 align-items-center justify-content-center">
+
+                                <a href="https://www.facebook.com/"
+                                    class="text-primary me-3 rounded-circle border border-primary redes d-flex align-items-center justify-content-center "><i
+                                        class="bi bi-facebook"></i></a>
+                                <a href="https://www.instagram.com/"
+                                    class="text-warning me-3 rounded-circle border border-warning redes d-flex align-items-center justify-content-center "><i
+                                        class="bi bi-instagram"></i></a>
+                                <a href="https://x.com/"
+                                    class="text-info me-3 rounded-circle border border-info redes d-flex align-items-center justify-content-center "><i
+                                        class="bi bi-twitter-x"></i></a>
+                                <a href="https://www.youtube.com/"
+                                    class="text-danger me-3 rounded-circle border border-danger redes d-flex align-items-center justify-content-center "><i
+                                        class="bi bi-youtube"></i></a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </di>
+        </section>
+    </main>
+    <footer class="bg-secondary text-white mt-5 mb-0">
+        <!-- place footer here -->
+        <div class="row ms-4 me-4 ">
+            <div class="col-12 col-md-6 col-lg-4 p-4 mt-4">
+                <h5 class="fw-bold mb-4"><i class="bi bi-airplane-fill"></i> Destinos del mundo</h5>
+                <p>Tu agencia de confianza para vivir experiencias inolvidables alrededor del mundo.</p>
+                <div class="d-flex mt-4">
+                    <a href="https://www.facebook.com/" class="text-white pe-3"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/" class="text-white pe-3"><i class="bi bi-instagram"></i></a>
+                    <a href="https://x.com/" class="text-white pe-3"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.youtube.com/" class="text-white pe-3"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-4 mt-4">
+                <h5 class="fw-bold mb-4">Enlaces rápidos</h5>
+                <a href="index.html" class="text-decoration-none">
+                    <p class="text-white">Inicio</p>
+                </a>
+                <a href="destinos.html" class="text-decoration-none">
+                    <p class="text-white">Destinos</p>
+                </a>
+                <a href="contacto.html" class="text-decoration-none">
+                    <p class="text-white">Contacto</p>
+                </a>
+                <a href="contacto.html" class="text-decoration-none">
+                    <p class="text-white">Sobre nosotros</p>
+                </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-4 mt-4">
+                <h5 class="fw-bold mb-4">Contacto</h5>
+                <p class="text-white"><i class="bi bi-geo-alt-fill me-2"></i>Calle Nonombre 1234, Madrid</p>
+                <p class="text-white"><i class="bi bi-telephone-fill me-2"></i>+34 900 123 456</p>
+                <p class="text-white"><i class="bi bi-envelope-fill me-2"></i>informacion@miagenciaviajes.com</p>
+                <p class="text-white"><i class="bi bi-clock-fill me-2"></i>Lun-Vie 9:00-14:00 y 16:00-19:00</p>
+            </div>
+        </div>
+        <hr class="ms-5 me-5">
+        <br>
+        <p class="text-center">© 2026 Destinos del mundo. Todos los derechos reservados</p>
+        <br>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
